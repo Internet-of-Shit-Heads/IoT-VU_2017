@@ -8,7 +8,7 @@ The subprojects are:
 
  - [Dashboard](https://github.com/Internet-of-Shit-Heads/Coordinator_Node/tree/4c7671018e276e860dedb3372891ff0d6c3b086b): A (very simple) HTTP dashboard that display the sensor values. Using paho-mqtt.js to connect to a MQTT broker via websockets, and Google charts to display the values.
 
- - [RFnode](https://github.com/Internet-of-Shit-Heads/RFnode/tree/cc2af83b3421f3a7ac8289e8c6aff94748f121a1): Arduino project for the low-power RF-Nodes (sensors)
+ - [RFnode](https://github.com/Internet-of-Shit-Heads/RFnode/tree/6a66a715359818af1b20c46313490e40c8289eb0): Arduino project for the low-power RF-Nodes (sensors)
 
  - [Coordinator Node](https://github.com/Internet-of-Shit-Heads/Coordinator_Node/tree/4c7671018e276e860dedb3372891ff0d6c3b086b): Arduino project for the ESP8266 Coordinator node
 
