@@ -1,0 +1,25 @@
+# ignore latexmk artifacts
+*.acn
+*.acr
+*.alg
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.glsdefs
+*.ist
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.thm
+*.toc
+*.tdo
+*-blx.bib
+*.tex.backup
+*.spl

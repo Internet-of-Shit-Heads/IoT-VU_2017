@@ -1,0 +1,277 @@
+\documentclass[a4paper,10pt,egregdoesnotlikesansseriftitles]{scrartcl}
+%\documentclass[a4paper,11pt]{report}
+
+\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage[toc,page]{appendix}
+
+%remove helvetica/arial if necessary
+%\usepackage[scaled]{helvet}
+%\usepackage[default,regular,bold]{sourceserifpro}
+
+\renewcommand\familydefault{lmr}
+\usepackage{lmodern}
+\usepackage{inconsolata}
+
+\usepackage[pdfusetitle,hidelinks]{hyperref}
+\usepackage{url}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[inline]{enumitem}
+\usepackage[final]{pdfpages}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{wrapfig}
+\usepackage{tabularx}
+\usepackage[font=small,bf,normal]{caption}
+\usepackage{subcaption}
+\usepackage{tikz,pgfplots}
+\pgfplotsset{compat=1.9}
+\usetikzlibrary{arrows,automata,positioning,backgrounds,chains}
+
+\usepackage{csquotes}
+\usepackage{ragged2e}
+\usepackage{mathtools}
+\usepackage[many]{tcolorbox}
+\usepackage[official]{eurosym}
+\usepackage[hang,flushmargin]{footmisc}
+\usepackage[colorinlistoftodos,prependcaption,textsize=scriptsize]{todonotes}
+
+\newcommand{\fillin}[1]{\todo[inline,color=red!40,size=]{#1}}
+
+\usepackage[capitalize]{cleveref}
+
+%reduce margins
+\usepackage{geometry}
+%\geometry{textheight=680pt}
+% \geometry{textheight=680pt,
+%           top=2cm,
+%           right=2cm,
+%           left=2cm,
+%           bottom=2.5cm,
+%           marginparwidth=40pt,
+%           footskip=15pt
+%           }
+
+% \RedeclareSectionCommand[
+%   beforeskip=-\baselineskip,
+%   afterskip=.35\baselineskip]{section}
+% \RedeclareSectionCommand[
+%   beforeskip=-.75\baselineskip,
+%   afterskip=.4\baselineskip]{subsection}
+% \RedeclareSectionCommand[
+%   beforeskip=-.5\baselineskip,
+%   afterskip=.2\baselineskip]{subsubsection}
+% \RedeclareSectionCommand[
+%   beforeskip=.5\baselineskip,
+%   afterskip=-1em]{paragraph}
+% \RedeclareSectionCommand[
+%   beforeskip=-.5\baselineskip,
+%   afterskip=-1em]{subparagraph}
+
+%TODO remove
+%\usepackage{showframe}
+
+\newlist{compactitem}{itemize}{3}
+\setlist[compactitem]{topsep=0pt,partopsep=0pt,itemsep=0pt,parsep=0pt}
+\setlist[compactitem,1]{label=\textbullet}
+\setlist[compactitem,2]{label=---}
+\setlist[compactitem,3]{label=*}
+
+%reduce author size in titlepage
+%\usepackage[affil-it]{authblk} 
+%\renewcommand\Authfont{\fontsize{11}{12}\selectfont}
+%\renewcommand\Affilfont{\fontsize{9}{10.8}\itshape}
+%\renewcommand*{\Authsep}{, }
+%\renewcommand*{\Authand}{, }
+%\renewcommand*{\Authands}{, }
+
+\usepackage{etoolbox}
+%\patchcmd{\maketitle}{\LARGE \@title}{\fontsize{16}{19.2}selectfont\@title}{}{}
+
+\usepackage{listings}
+\crefname{lstlisting}{listing}{listings}
+\Crefname{lstlisting}{Listing}{Listings}
+\lstset{basicstyle=\scriptsize,
+        backgroundcolor=\color{lightgray},
+        % xleftmargin=1em,
+        % xtopmargin=1em,
+        % xrightmargin=1em,
+        % xbottommargin=1em,
+        frame=tlbr,framesep=2pt,framerule=0pt
+}
+\lstset{language=C++,
+      basicstyle=\scriptsize\ttfamily,
+      keywordstyle=\color{blue}\ttfamily,
+      stringstyle=\color{red}\ttfamily,
+      commentstyle=\color{green}\ttfamily,
+      morecomment=[l][\color{magenta}]{\#}
+}
+
+\usepackage{protobuf/lang}  % include language definition for protobuf
+
+\usepackage[
+        bibstyle=ieee,
+        citestyle=numeric-comp,
+        backend=biber,
+        bibencoding=auto,
+        %defernumbers=true,
+        %url=false
+        ]{biblatex}
+
+\bibliography{proj_docu.bib}
+
+\renewcommand*{\bibfont}{\footnotesize}
+\renewcommand\mkbibacro[1]{{\footnotesize\MakeUppercase{#1}}}
+%\renewcommand\mkbibacro[1]{{\MakeUppercase{#1}}}
+
+\AtEveryBibitem{%
+  %\ifentrytype{misc}{%
+  %}{%
+  %  \clearfield{url}%
+  %  \clearfield{urldate}%
+  %}%
+  \ifentrytype{article}{%
+    \clearfield{url}%
+    \clearfield{urldate}%
+    \clearfield{urlyear}%
+  }{}%
+  \ifentrytype{book}{%
+    \clearfield{url}%
+    \clearfield{urldate}%
+    \clearfield{urlyear}%
+  }{}%
+  \ifentrytype{incollection}{%
+    \clearfield{url}%
+    \clearfield{urldate}%
+    \clearfield{urlyear}%
+  }{}%
+  \ifentrytype{inproceedings}{%
+    \clearfield{url}%
+    \clearfield{urldate}%
+    \clearfield{urlyear}%
+  }{}%
+  \ifentrytype{report}{%
+    \clearfield{url}%
+    \clearfield{urldate}%
+    \clearfield{urlyear}%
+  }{}%
+  \ifentrytype{techreport}{%
+    \clearfield{url}%
+    \clearfield{urldate}%
+    \clearfield{urlyear}%
+  }{}%
+  \iffieldundef{doi}{}{%
+    \clearfield{issn}%
+    \clearfield{isbn}%
+  }%
+}
+
+\makeatletter
+\defbibenvironment{bibliography}
+{\list{\printtext[labelnumberwidth]{%
+    \printfield{prefixnumber}%
+    \printfield{labelnumber}}}
+{%
+\setlength{\bibhang}{0pt}%
+\setlength{\leftmargin}{0pt}%
+%\setlength{\leftmargin}{2em}%
+\setlength{\itemindent}{2em}%
+\setlength{\itemsep}{\bibitemsep}%
+\setlength{\parsep}{\bibparsep}%
+}}
+{\endlist}
+{\item}
+\makeatother
+
+\usepackage{setspace}
+%use 1.5 line spacing
+\onehalfspacing
+
+%reduce margins and move title upwards, save trees! :)
+%\usepackage[margin=0.8in]{geometry}
+%\usepackage{titling}
+% \setlength{\droptitle}{-8em}
+% \pretitle{\begin{center}\fontsize{20pt}{20pt}\selectfont}
+% \posttitle{\par\end{center}}
+%\preauthor{\begin{center}\fontsize{14bp}{14bp}\selectfont}
+%    \postauthor{\par\end{center}\vspace{24bp}}
+% \predate{}
+% \date{}
+% \postdate{}
+
+\newcommand{\review}[1]{{%
+  \color{red}{#1}%
+  }}
+
+\urlstyle{same}
+
+\usepackage[toc,acronyms,nogroupskip]{glossaries}
+\setglossarystyle{list}
+\renewcommand*{\glsgroupskip}{}
+% first use of glossaryentry will be italic
+\defglsentryfmt[main]{%
+  \ifglsused{\glslabel}{%
+    \glsgenentryfmt%
+  }{%
+    % Typeset first use
+    \textit{\glsgenentryfmt}%
+  }%
+}
+
+\makeglossaries
+\input{sections/glossary}
+%\glsdisablehyper
+
+\glsaddall
+
+\title{Project Documentation}
+\subtitle{182.753 Internet of Things (VU 4,0) 2017W}
+
+\newtcolorbox{sumbox}[2][]{
+  colback=white,
+  arc=0.5mm,
+  colbacktitle=gray!5!white,coltitle=black,
+  boxrule=1px,
+  fonttitle=\bfseries\small,
+  fontupper=\footnotesize,
+  title={#2},
+  #1
+  }
+
+\author{\texorpdfstring{%
+  Philipp Raich\thanks{~\href{mailto:philipp.raich@tuwien.ac.at}{philipp.raich@tuwien.ac.at}} \and
+  Mino Sharkhawy\thanks{~\href{mailto:mino.sharkhawy@student.tuwien.ac.at}{mino.sharkhawy@student.tuwien.ac.at}} \and
+  Thomas Weber\thanks{~\href{mailto:thomas.weber@student.tuwien.ac.at}{e1025654@student.tuwien.ac.at}}
+  }%
+  {Philipp Raich, Mino Sharkhawy, Thomas Weber}%
+}
+
+\hypersetup{
+  unicode=true,
+  %pdfauthor={Philipp Raich},
+  pdfsubject={Lab protocol},
+  pdfkeywords={IoT, MQTT, ESP8266, LP-RF},
+  pdfpagemode={UseOutlines},
+}
+
+\pagenumbering{alph}
+\begin{document}
+
+\begin{singlespacing}
+\maketitle
+%\include{sections/title}
+
+%\pagenumbering{alph} % set the numbering style to lowercase letter
+\setcounter{tocdepth}{2}
+
+\tableofcontents
+\end{singlespacing}
+
+\thispagestyle{empty}
+
+\include{sections/corpus}
+%\input{sections/globib}
+
+% \include{sections/appendix}
+
+\end{document}
