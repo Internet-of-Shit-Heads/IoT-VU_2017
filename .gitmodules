@@ -25,3 +25,9 @@
 [submodule "libraries/nanopb"]
 	path = libraries/nanopb
 	url = https://github.com/nanopb/nanopb.git
+[submodule "libraries/RF24"]
+	path = libraries/RF24
+	url = https://github.com/nRF24/RF24.git
+[submodule "libraries/RTClib"]
+	path = libraries/RTClib
+	url = https://github.com/adafruit/RTClib.git
