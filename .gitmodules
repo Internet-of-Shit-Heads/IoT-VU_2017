@@ -31,3 +31,6 @@
 [submodule "libraries/RTClib"]
 	path = libraries/RTClib
 	url = https://github.com/adafruit/RTClib.git
+[submodule "libraries/pubsubclient"]
+	path = libraries/pubsubclient
+	url = https://github.com/knolleary/pubsubclient.git
