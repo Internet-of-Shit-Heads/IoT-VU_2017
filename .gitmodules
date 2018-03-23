@@ -34,3 +34,6 @@
 [submodule "libraries/pubsubclient"]
 	path = libraries/pubsubclient
 	url = https://github.com/knolleary/pubsubclient.git
+[submodule "broker_config"]
+	path = broker_config
+	url = https://github.com/Internet-of-Shit-Heads/broker_config.git
