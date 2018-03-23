@@ -1,0 +1,27 @@
+[submodule "Dashboard"]
+	path = Dashboard
+	url = git@github.com:Internet-of-Shit-Heads/Dashboard.git
+[submodule "RFnode"]
+	path = RFnode
+	url = git@github.com:Internet-of-Shit-Heads/RFnode.git
+[submodule "ca-helpers"]
+	path = ca-helpers
+	url = git@github.com:Internet-of-Shit-Heads/ca-helpers.git
+[submodule "libraries/cfglib"]
+	path = libraries/cfglib
+	url = git@github.com:Internet-of-Shit-Heads/cfglib.git
+[submodule "libraries/cryptlib"]
+	path = libraries/cryptlib
+	url = git@github.com:Internet-of-Shit-Heads/cryptlib.git
+[submodule "libraries/sensordata"]
+	path = libraries/sensordata
+	url = git@github.com:Internet-of-Shit-Heads/sensordata.git
+[submodule "libraries/RFLib"]
+	path = libraries/RFLib
+	url = git@github.com:Internet-of-Shit-Heads/RFLib.git
+[submodule "Coordinator_Node"]
+	path = Coordinator_Node
+	url = git@github.com:Internet-of-Shit-Heads/Coordinator_Node.git
+[submodule "libraries/nanopb"]
+	path = libraries/nanopb
+	url = git@github.com:nanopb/nanopb.git
