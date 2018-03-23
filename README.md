@@ -10,7 +10,7 @@ The subprojects are:
 
  - [RFnode](https://github.com/Internet-of-Shit-Heads/RFnode): Arduino project for the low-power RF-Nodes (sensors)
 
- - [Coordinator Node](https://github.com/Internet-of-Shit-Heads): Arduino project for the ESP8266 Coordinator node
+ - [Coordinator Node](https://github.com/Internet-of-Shit-Heads/Coordinator_Node): Arduino project for the ESP8266 Coordinator node
 
  - [Broker Config](https://github.com/Internet-of-Shit-Heads/broker_config): Configuration files for the MQTT broker (mosquitto)
 
